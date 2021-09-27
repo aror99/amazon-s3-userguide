@@ -1,6 +1,6 @@
-# How S3 Versioning works<a name="versioning-workflows"></a>
+# TODO: En progreso 
 
-You can use S3 Versioning to keep multiple versions of an object in one bucket and enable you to restore objects that are accidentally deleted or overwritten\. For example, if you delete an object, instead of removing it permanently, Amazon S3 inserts a delete marker, which becomes the current object version\. You can then restore the previous version\. For more information, see [Deleting object versions from a versioning\-enabled bucket](DeletingObjectVersions.md)\. If you overwrite an object, it results in a new object version in the bucket\. You can always restore the previous version\.
+# How S3 Versioning works<a name="versioning-workflows"></a>
 
 Each S3 bucket that you create has a *versioning* subresource associated with it\. \(For more information, see [Bucket configuration options](UsingBucket.md#bucket-config-options-intro)\.\) By default, your bucket is *unversioned*, and the versioning subresource stores the empty versioning configuration, as follows\.
 
@@ -22,9 +22,6 @@ To suspend versioning, you set the status value to `Suspended`\.
 **Note**  
  If you enable versioning on a bucket for the first time, it might take a short amount of time for the change to be fully propagated\. We recommend that you wait for 15 minutes after enabling versioning before issuing write operations \(PUT or DELETE\) on objects in the bucket\. 
 
-The bucket owner and all authorized IAM users can enable versioning\. The bucket owner is the AWS account that created the bucket \(the root account\)\. For more information about permissions, see [Identity and access management in Amazon S3](s3-access-control.md)\.
-
-For more information about enabling and disabling S3 Versioning using the AWS Management Console, AWS Command Line Interface \(AWS CLI\), or REST API, see [Enabling versioning on buckets](manage-versioning-examples.md)\.
 
 **Topics**
 + [Version IDs](#version-ids)
