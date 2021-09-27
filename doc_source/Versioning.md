@@ -1,14 +1,13 @@
+# OK
+
 # Using versioning in S3 buckets<a name="Versioning"></a>
 
-Versioning in Amazon S3 is a means of keeping multiple variants of an object in the same bucket\. You can use the S3 Versioning feature to preserve, retrieve, and restore every version of every object stored in your buckets\. With versioning you can recover more easily from both unintended user actions and application failures\. After versioning is enabled for a bucket, if Amazon S3 receives multiple write requests for the same object simultaneously, it stores all of those objects\.
+Versioning in Amazon S3 is a means of keeping multiple variants of an object in the same bucket\.  After versioning is enabled for a bucket, if Amazon S3 receives multiple write requests for the same object simultaneously, it stores all of those objects\.
 
-Versioning\-enabled buckets can help you recover objects from accidental deletion or overwrite\. For example, if you delete an object, Amazon S3 inserts a delete marker instead of removing the object permanently\. The delete marker becomes the current object version\. If you overwrite an object, it results in a new object version in the bucket\. You can always restore the previous version\. For more information, see [Deleting object versions from a versioning\-enabled bucket](DeletingObjectVersions.md)\. 
+If you delete an object, Amazon S3 inserts a delete marker instead of removing the object permanently\. The delete marker becomes the current object version\. If you overwrite an object, it results in a new object version in the bucket\. You can always restore the previous version\. 
 
-By default, S3 Versioning is disabled on buckets, and you must explicitly enable it\. For more information, see [Enabling versioning on buckets](manage-versioning-examples.md)\.
+By default, S3 Versioning is disabled on buckets, and you must explicitly enable it\. 
 
-**Note**  
-The SOAP API does not support S3 Versioning\. SOAP support over HTTP is deprecated, but it is still available over HTTPS\. New Amazon S3 features are not supported for SOAP\.
-Normal Amazon S3 rates apply for every version of an object stored and transferred\. Each version of an object is the entire object; it is not just a diff from the previous version\. Thus, if you have three versions of an object stored, you are charged for three objects\. 
 
 ## Unversioned, versioning\-enabled, and versioning\-suspended buckets<a name="versioning-states"></a>
 
