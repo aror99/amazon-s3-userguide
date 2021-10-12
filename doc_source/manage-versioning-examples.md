@@ -59,7 +59,7 @@ Wey, ni le sabes al .NET, ahi en la guia oficial viene un ejemplillo
 
 For instructions on how to create and test a working sample, see [Testing the Amazon S3 Java Code Examples](UsingTheMPJavaAPI.md#TestingJavaSamples)\. 
 
-```
+```java
 import java.io.IOException;
 
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
@@ -108,7 +108,7 @@ For instructions on how to create and test a working sample, see [Using the AWS 
 
 The following Python code example creates an Amazon S3 bucket, enables it for versioning, and configures a lifecycle that expires noncurrent object versions after 7 days\.
 
-```
+```python
 def create_versioned_bucket(bucket_name, prefix):
     """
     Creates an Amazon S3 bucket, enables it for versioning, and configures a lifecycle
