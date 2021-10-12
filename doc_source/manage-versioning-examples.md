@@ -3,7 +3,7 @@
 You can use S3 Versioning to keep multiple versions of an object in one bucket\. This section provides examples of how to enable versioning on a bucket using the console, REST API, AWS SDKs, and AWS Command Line Interface \(AWS CLI\)\. 
 
 **Note**  
- If you enable versioning on a bucket for the first time, it might take a short amount of time for the change to be fully propagated\. We recommend that you wait for 15 minutes after enabling versioning before issuing write operations \(PUT or DELETE\) on objects in the bucket\. 
+ Acuerdate que si es la primera vez que habilitas el versionado y esta choncho el bucket, hay que esperar unos 15 minutos antes de que quede listo\. 
 
 
 Each S3 bucket that you create has a *versioning* subresource associated with it\. \(For more information, see [Bucket configuration options](UsingBucket.md#bucket-config-options-intro)\.\) By default, your bucket is *unversioned*, and the versioning subresource stores the empty versioning configuration, as follows\.
