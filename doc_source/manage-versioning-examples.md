@@ -5,7 +5,6 @@ You can use S3 Versioning to keep multiple versions of an object in one bucket\.
 **Note**  
  If you enable versioning on a bucket for the first time, it might take a short amount of time for the change to be fully propagated\. We recommend that you wait for 15 minutes after enabling versioning before issuing write operations \(PUT or DELETE\) on objects in the bucket\. 
 
-For more information about S3 Versioning, see [Using versioning in S3 buckets](Versioning.md)\. For information about working with objects that are in versioning\-enabled buckets, see [Working with objects in a versioning\-enabled bucket](manage-objects-versioned-bucket.md)\.
 
 Each S3 bucket that you create has a *versioning* subresource associated with it\. \(For more information, see [Bucket configuration options](UsingBucket.md#bucket-config-options-intro)\.\) By default, your bucket is *unversioned*, and the versioning subresource stores the empty versioning configuration, as follows\.
 
@@ -24,9 +23,7 @@ To enable versioning, you can send a request to Amazon S3 with a versioning conf
 
 To suspend versioning, you set the status value to `Suspended`\.
 
-The bucket owner and all authorized IAM users can enable versioning\. The bucket owner is the AWS account that created the bucket \(the root account\)\. For more information about permissions, see [Identity and access management in Amazon S3](s3-access-control.md)\.
-
-The following sections provide more detail about enabling S3 Versioning using the console, AWS CLI, and the AWS SDKs\.
+The bucket owner and all authorized IAM users can enable versioning\. The bucket owner is the AWS account that created the bucket \(the root account\)\. 
 
 ## Using the S3 console<a name="enable-versioning"></a>
 
@@ -34,19 +31,7 @@ Follow these steps to use the AWS Management Console to enable versioning on an 
 
 **To enable or disable versioning on an S3 bucket**
 
-1. Sign in to the AWS Management Console and open the Amazon S3 console at [https://console\.aws\.amazon\.com/s3/](https://console.aws.amazon.com/s3/)\.
-
-1. In the **Buckets** list, choose the name of the bucket that you want to enable versioning for\.
-
-1. Choose **Properties**\.
-
-1. Under **Bucket Versioning**, choose **Edit**\.
-
-1. Choose **Suspend** or **Enable**, and then choose **Save changes**\.
-
-**Note**  
-You can use AWS multi\-factor authentication \(MFA\) with versioning\. When you use MFA with versioning, you must provide your AWS account’s access keys and a valid code from the account’s MFA device to permanently delete an object version or suspend or reactivate versioning\.   
-To use MFA with versioning, you enable `MFA Delete`\. However, you can't enable `MFA Delete` using the AWS Management Console\. You must use the AWS Command Line Interface \(AWS CLI\) or the API\. For more information, see [Configuring MFA delete](MultiFactorAuthenticationDelete.md)\.
+La neta es muy facil, nomas es ver las pantallitas del bucker y en las opciones sale el versionado.
 
 ## Using the AWS CLI<a name="manage-versioning-examples-cli"></a>
 
