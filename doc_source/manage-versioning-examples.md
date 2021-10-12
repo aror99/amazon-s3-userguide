@@ -27,10 +27,6 @@ The bucket owner and all authorized IAM users can enable versioning\. The bucket
 
 ## Using the S3 console<a name="enable-versioning"></a>
 
-Follow these steps to use the AWS Management Console to enable versioning on an S3 bucket\.
-
-**To enable or disable versioning on an S3 bucket**
-
 La neta es muy facil, nomas es ver las pantallitas del bucker y en las opciones sale el versionado.
 
 ## Using the AWS CLI<a name="manage-versioning-examples-cli"></a>
@@ -47,9 +43,6 @@ The following example enables versioning and multi\-factor authentication \(MFA\
 aws s3api put-bucket-versioning --bucket DOC-EXAMPLE-BUCKET1 --versioning-configuration Status=Enabled,MFADelete=Enabled --mfa "SERIAL 123456"
 ```
 
-**Note**  
-Using MFA delete requires an approved physical or virtual authentication device\. For more information about using MFA delete in Amazon S3, see [Configuring MFA delete](MultiFactorAuthenticationDelete.md)\.
-
 For more information about enabling versioning using the AWS CLI, see [put\-bucket\-versioning](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-bucket-versioning.html) in the *AWS CLI Command Reference*\.
 
 ## Using the AWS SDKs<a name="manage-versioning-examples-sdk"></a>
@@ -59,81 +52,7 @@ The following examples enable versioning on a bucket and then retrieve versionin
 ------
 #### [ \.NET ]
 
-For information about how to create and test a working sample, see [Running the Amazon S3 \.NET Code Examples](UsingTheMPDotNetAPI.md#TestingDotNetApiSamples)\. 
-
-```
-using System;
-using Amazon.S3;
-using Amazon.S3.Model;
-
-namespace s3.amazon.com.docsamples
-{
-    class BucketVersioningConfiguration
-    {
-        static string bucketName = "*** bucket name ***";
-
-        public static void Main(string[] args)
-        {
-            using (var client = new AmazonS3Client(Amazon.RegionEndpoint.USEast1))
-            {
-                try
-                {
-                    EnableVersioningOnBucket(client);
-                    string bucketVersioningStatus = RetrieveBucketVersioningConfiguration(client);
-                }
-                catch (AmazonS3Exception amazonS3Exception)
-                {
-                    if (amazonS3Exception.ErrorCode != null &&
-                        (amazonS3Exception.ErrorCode.Equals("InvalidAccessKeyId")
-                        ||
-                        amazonS3Exception.ErrorCode.Equals("InvalidSecurity")))
-                    {
-                        Console.WriteLine("Check the provided AWS Credentials.");
-                        Console.WriteLine(
-                        "To sign up for service, go to http://aws.amazon.com/s3");
-                    }
-                    else
-                    {
-                        Console.WriteLine(
-                         "Error occurred. Message:'{0}' when listing objects",
-                         amazonS3Exception.Message);
-                    }
-                }
-            }
-
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
-        }
-
-        static void EnableVersioningOnBucket(IAmazonS3 client)
-        {
-
-                PutBucketVersioningRequest request = new PutBucketVersioningRequest
-                {
-                    BucketName = bucketName,
-                    VersioningConfig = new S3BucketVersioningConfig 
-                    {
-                        Status = VersionStatus.Enabled
-                    }
-                };
-
-                PutBucketVersioningResponse response = client.PutBucketVersioning(request);
-        }
-
-
-        static string RetrieveBucketVersioningConfiguration(IAmazonS3 client)
-        {
-                GetBucketVersioningRequest request = new GetBucketVersioningRequest
-                {
-                    BucketName = bucketName
-                };
- 
-                GetBucketVersioningResponse response = client.GetBucketVersioning(request);
-                return response.VersioningConfig.Status;
-            }
-    }
-}
-```
+Wey, ni le sabes al .NET, ahi en la guia oficial viene un ejemplillo
 
 ------
 #### [ Java ]
